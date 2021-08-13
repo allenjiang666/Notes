@@ -14,8 +14,9 @@ Account have MFA enabled.
 
   `arn-of-the-mfa-device`: visible from your user IAM. 
   - Option: Use CLI to retrieve: aws iam list-mfa-devices --user-name ryan
-  - Option: View in IAM console: IAM --> Users --> --> Security Credentials. 
-  `code-from-token`: 6 digit code from your configured MFA device
+  - Option: View in IAM console: IAM --> Users --> --> Security Credentials.  
+  
+   `code-from-token`: 6 digit code from your configured MFA device
   
 2. Create a profile with the **returned** credentials.  
 ```
