@@ -1,13 +1,13 @@
 # Notes
 ## AWS 
-### Issue
+### Issue 
 
 <p style="color:red;">S3UploadFailedError: Failed to upload test.gz to webhose100/test.gz: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied</p>
 
-### Reason
+#### Reason
 Account have MFA enabled. 
 
-### Resolution:
+#### Resolution:
 
 1. Request a session token with MFA  
 `aws sts get-session-token --serial-number arn-of-the-mfa-device --token-code code-from-token`. 
