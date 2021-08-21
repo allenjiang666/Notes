@@ -21,7 +21,7 @@ Account have MFA enabled.
 2. Create a profile with the **returned** credentials.  
 ```
 aws configure --profile sfl 
-aws configure set --profile cli aws_session_token <SESSION_TOKEN_HERE>
+aws configure set --profile sfl aws_session_token <SESSION_TOKEN_HERE>
 ```
 aws_session_token is not included in aws configure
 
