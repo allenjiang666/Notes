@@ -1,6 +1,6 @@
 # Notes
 ## AWS 
-### Issue 
+### MFA login
 
 <p style="color:red;">S3UploadFailedError: Failed to upload test.gz to webhose100/test.gz: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied</p>
 
@@ -36,4 +36,20 @@ session = boto3.Session(profile_name='sfl')
 s3 = session.client('s3')
 s3.upload_file(Filename,Bucket,Key)
 ```
+### Building a layer from SAM
 
+1. Creat a resoure in sam template like below:
+```
+Resources:
+  WebhoseLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: packages/
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: python3.8
+ ```
+3. Create a requirement.txt file and put it into folder(packages)
+4. run`sam build`, then the dependencies will be copy to the build file
+5. `sam deploy --guided --profile [name]`
