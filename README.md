@@ -20,19 +20,19 @@ Account have MFA enabled.
   
 2. Create a profile with the **returned** credentials.  
 ```
-aws configure --profile cli 
+aws configure --profile sfl 
 aws configure set --profile cli aws_session_token <SESSION_TOKEN_HERE>
 ```
 aws_session_token is not included in aws configure
 
 3. Test command
 
-`aws s3 ls --profile cli`
+`aws s3 ls --profile sfl`
 
 4. Connect using boto3
 
 ```
-session = boto3.Session(profile_name='cli')
+session = boto3.Session(profile_name='sfl')
 s3 = session.client('s3')
 s3.upload_file(Filename,Bucket,Key)
 ```
