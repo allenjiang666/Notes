@@ -50,6 +50,7 @@ Resources:
     Metadata:
       BuildMethod: python3.8
  ```
+2. When create sam template, don't use !ref bucket twice, it will occur concurrency issues.
 3. Create a requirement.txt file and put it into folder(packages)
 4. run`sam build`, then the dependencies will be copy to the build file
-5. `sam deploy --guided --profile [name]`
+5. `sam deploy --guided --profile [name]` (**don't delete samconfig.toml file**) 
